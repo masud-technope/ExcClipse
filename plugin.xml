@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="ExcClipse"
+            id="ca.usask.cs.srlab.excclipse">
+      </category>
+      <view
+            name="ExcClipse"
+            icon="icons/sclogo4.png"
+            category="ca.usask.cs.srlab.excclipse"
+            class="ca.usask.cs.srlab.excclipse.views.SurfClipseClientView"
+            id="ca.usask.cs.srlab.excclipse.views.SurfClipseClientView">
+      </view>
+      <view
+            name="ExcClipse Examples"
+            icon="icons/selogo4.png"
+            category="ca.usask.cs.srlab.excclipse"
+            class="ca.usask.cs.srlab.excclipse.views.SurfExampleClientView"
+            id="ca.usask.cs.srlab.excclipse.views.SurfExampleClientView">
+      </view>
+      
+      <view
+            name="ExcClipse Browser"
+            icon="icons/browser16.png"
+            category="ca.usask.cs.srlab.excclipse"
+            class="ca.usask.cs.srlab.excclipse.views.SurfClipseBrowser"
+            id="ca.usask.cs.srlab.excclipse.views.SurfClipseBrowser">
+      </view>
+      <view
+            name="StackTrace View"
+            icon="icons/sgraph.png"
+            category="ca.usask.cs.srlab.excclipse"
+            class="ca.usask.cs.srlab.excclipse.views.StackTraceView"
+            id="ca.usask.cs.srlab.excclipse.views.StackTraceView">
+      </view>
+      <view
+            name="ExcClipse Suggestion"
+            icon="icons/sugg16.png"
+            category="ca.usask.cs.srlab.excclipse"
+            class="ca.usask.cs.srlab.excclipse.views.SuggestionView"
+            id="ca.usask.cs.srlab.excclipse.views.SuggestionView">
+      </view>
+      
+   </extension>
+   <extension point="org.eclipse.ui.commands">
+         <category
+               id="ca.usask.cs.srlab.excclipse.category"
+               description="This is a category for command"
+               name="commandcategory">
+         </category>
+         <command
+               categoryId="ca.usask.cs.srlab.excclipse.category"
+               defaultHandler="ca.usask.cs.srlab.excclipse.handlers.SurfClipseHandler"
+               id="ca.usask.cs.srlab.excclipse.SurfClipseClient"
+               name="Search Webpages">
+         </command>
+         <command
+               categoryId="ca.usask.cs.srlab.excclipse.category"
+               defaultHandler="ca.usask.cs.srlab.excclipse.handlers.code.SurfExampleHandler"
+               id="ca.usask.cs.srlab.excclipse.SurfExampleClient"
+               name="Search Examples">
+         </command>
+          <command
+         		categoryId="ca.usask.cs.srlab.excclipse.category"
+         		defaultHandler="ca.usask.cs.srlab.excclipse.handlers.ShowSurfClipseHandler"
+         		id="ca.usask.cs.srlab.excclipse.ShowSurfClipse"
+         		name="Enable ExcClipse">
+         </command>
+         <command
+         		categoryId="ca.usask.cs.srlab.excclipse.category"
+         		defaultHandler="ca.usask.cs.srlab.excclipse.handlers.EnableModeHandler"
+         		id="ca.usask.cs.srlab.excclipse.EnableProactive"
+         		name="Proactive">
+         </command>
+         <command
+         		categoryId="ca.usask.cs.srlab.excclipse.category"
+         		defaultHandler="ca.usask.cs.srlab.excclipse.handlers.EnableModeHandler"
+         		id="ca.usask.cs.srlab.excclipse.EnableInteractive"
+         		name="Interactive">
+         </command>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+         <menuContribution   
+               allPopups="false"
+               locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+               <menu label="ExcClipse" icon="icons/sclogo4.png" id="ca.usask.cs.srlab.excclipse.popupmenu">
+               <command commandId="ca.usask.cs.srlab.excclipse.ShowSurfClipse"
+                     id="ca.usask.cs.srlab.excclipse.ShowSurfClipseMenu"
+                     label="Enable ExcClipse"
+                     icon="icons/enablesc16.png"
+                     style="push">
+               </command>
+               <command commandId="ca.usask.cs.srlab.excclipse.EnableProactive"
+                     id="ca.usask.cs.srlab.excclipse.EnableProactiveMenu"
+                     label="Choose Proactive Mode"
+                     icon="icons/pro16.png"
+                     style="push">
+               </command>
+                <command commandId="ca.usask.cs.srlab.excclipse.EnableInteractive"
+                     id="ca.usask.cs.srlab.excclipse.EnableInteractiveMenu"
+                     label="Choose Interactive Mode"
+                     icon="icons/inter16.png"
+                     style="push">
+               </command>
+               <command
+                     commandId="ca.usask.cs.srlab.excclipse.SurfClipseClient"
+                     id="ca.usask.cs.srlab.excclipse.SurfClipseMenu"
+                     label="Search Webpages"
+                     icon="icons/search16.png"
+                     style="push">
+               </command>
+               <command
+                     commandId="ca.usask.cs.srlab.excclipse.SurfExampleClient"
+                     id="ca.usask.cs.srlab.excclipse.SurfExampleMenu"
+                     label="Search Examples"
+                     icon="icons/search16.png"
+                     style="push">
+               </command>
+            </menu>
+         </menuContribution>
+         <menuContribution 
+         locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+               <menu label="ExcClipse" id="ca.usask.cs.srlab.excclipse.mainmenu">
+               
+               <command commandId="ca.usask.cs.srlab.excclipse.ShowSurfClipse"
+                     id="ca.usask.cs.srlab.excclipse.ShowSurfClipseMenu"
+                     label="Enable ExcClipse"
+                     icon="icons/enablesc16.png"
+                     style="push">
+               </command>
+               <command commandId="ca.usask.cs.srlab.excclipse.EnableProactive"
+                     id="ca.usask.cs.srlab.excclipse.EnableProactiveMenu"
+                     label="Choose Proactive Mode"
+                     icon="icons/pro16.png"
+                     style="push">
+               </command>
+                <command commandId="ca.usask.cs.srlab.excclipse.EnableInteractive"
+                     id="ca.usask.cs.srlab.excclipse.EnableInteractiveMenu"
+                     label="Choose Interactive Mode"
+                     icon="icons/inter16.png"
+                     style="push">
+               </command>
+               </menu>
+         </menuContribution> 
+   </extension>
+   
+   	  <extension point="org.eclipse.ui.handlers">
+      <handler
+      commandId="ca.usask.cs.srlab.excclipse.SurfClipseClient">
+      </handler>
+      <handler commandId="ca.usask.cs.srlab.excclipse.SurfExampleClient">
+      </handler>
+      <handler 
+      commandId="ca.usask.cs.srlab.excclipse.ShowSurfClipse">
+      </handler>
+      <handler commandId="ca.usask.cs.srlab.excclipse.EnableProactive">
+      </handler>
+      <handler commandId="ca.usask.cs.srlab.excclipse.EnableInteractive">
+      </handler>
+     </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="ca.usask.cs.srlab.excclipse.views.SampleView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

@@ -1,0 +1,31 @@
+code, pre, blockquote{
+background-color:#efefef; 
+padding:2px;
+} 
+
+div, p
+{
+text-align:left;
+padding-left:0px;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+text-align:left;
+}
+
+.rel1
+{
+background-color:#00CCFF;
+padding:2px;
+}
+.rel2
+{
+background-color:#33CCFF;
+padding:2px;
+}
+.rel3
+{
+background-color:#CCFFFF;
+padding:2px;
+}
